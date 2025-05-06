@@ -1,0 +1,55 @@
+{
+  "name": "xserver",
+  "version": "0.0.1",
+  "description": "server for xserver",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "lint": "ts-standard --fix",
+    "dev": "ts-node-dev src/index.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.7.0",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^20.17.41",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "cors": "^2.8.5",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.2",
+    "express": "^5.1.0",
+    "globals": "^16.0.0",
+    "multer": "1.4.5-lts.2",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "prisma": "^6.7.0",
+    "ts": "^0.2.2",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.0"
+  },
+  "keywords": [],
+  "author": "serverBKD",
+  "license": "ISC",
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/ts-standard/eslintrc.json"
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    }
+  }
+}
