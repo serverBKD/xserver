@@ -27,15 +27,17 @@ router.get('/:id', (req, res) => {
 }
 )
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   console.log('POST /products')
     const product = req.body
-    const newProduct = addProductToDatabase({ payload: product })
-    if (!newProduct) {  
-        console.log('Error creating product')
-        res.status(500).json({ error: 'Error creating product' })
+    try {
+      const newProduct = await addProductToDatabase({ payload: product })
+      res.status(201).json({newProduct})
+    } catch (error) {
+    console.log('Error creating product', error)
+    res.status(500).json({ error: 'Error creating product' })
     }
-  res.status(201).json(product)
+  
 }
 )
 

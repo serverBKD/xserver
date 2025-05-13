@@ -1,6 +1,7 @@
 import type { Product } from '../types.d.ts'
 import productsData from '../services/products.json'
 import prisma from '../models/prisma_client'
+import crypto from 'crypto'
 
 const products: Product[] = productsData as Product[]
 
@@ -15,7 +16,11 @@ export const getProductsFromDatabase = async () => {
   return productsFromDatabase || []
 }
 
-export const addProductToDatabase = async ({ payload }:any) => {
+export const addProductToDatabase = async ({ payload }: any) => {
+  payload.id = crypto.randomUUID()
+  payload.code = crypto.randomBytes(6).toString('hex')
+  payload.sku = crypto.randomUUID()
+  
     const newProduct = await prisma.product.create({
         data: payload,
     })
@@ -23,9 +28,7 @@ export const addProductToDatabase = async ({ payload }:any) => {
         console.log('Error creating product')
         return null
     }
-    console.log({newProduct})
     return newProduct   
-
 }
 
 export const getProductById = (id: string): Product | null => {
