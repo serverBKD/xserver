@@ -8,7 +8,8 @@
     "build": "tsc",
     "start": "node dist/src/index.js",
     "lint": "ts-standard --fix",
-    "dev": "ts-node-dev src/index.ts"
+    "dev": "ts-node-dev src/index.ts",
+    "seed": "node src/models/seed.warehouse.prisma.js"
   },
   "dependencies": {
     "@prisma/client": "^6.7.0",
@@ -43,7 +44,7 @@
   },
   "keywords": [],
   "author": "serverBKD",
-  "license": "ISC",
+  "license": "EULA",
   "eslintConfig": {
     "extends": [
       "./node_modules/ts-standard/eslintrc.json"

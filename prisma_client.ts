@@ -5,10 +5,10 @@ const PrismaClientSingleton = () => {
 }
 
 interface GlobalPrisma {
-  prisma?: PrismaClient;
+  prisma?: PrismaClient
 }
 
-const globalForPrisma = globalThis as typeof globalThis & GlobalPrisma;
+const globalForPrisma = globalThis as typeof globalThis & GlobalPrisma
 
 const prisma = globalForPrisma.prisma ?? PrismaClientSingleton()
 
