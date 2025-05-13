@@ -1,8 +1,10 @@
-import express from 'express'
-const router = express.Router()
+import express from "express";
+const router = express.Router();
 
-router.get('/', (_req, res) => {
-    res.send('This is a Important Task!')
-})
+import { toGetTasks, toAddTask } from "../controllers/tasks.controller";
 
-export default router
+router.get("/", toGetTasks);
+
+router.post("/", toAddTask);
+
+export default router;
