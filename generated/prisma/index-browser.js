@@ -117,9 +117,158 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.AuthScalarFieldEnum = {
+  id: 'id',
+  nickname: 'nickname',
+  email: 'email',
+  hashPass: 'hashPass',
+  role: 'role',
+  img: 'img',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ClientScalarFieldEnum = {
+  id: 'id',
+  fullname: 'fullname',
+  email: 'email',
+  tel: 'tel',
+  city: 'city',
+  img: 'img',
+  notes: 'notes',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ProductScalarFieldEnum = {
+  id: 'id',
+  fullname: 'fullname',
+  description: 'description',
+  trademark: 'trademark',
+  code: 'code',
+  serial: 'serial',
+  barcode: 'barcode',
+  sku: 'sku',
+  img: 'img',
+  price_base: 'price_base',
+  delta: 'delta',
+  divisa: 'divisa',
+  stock: 'stock',
+  unity: 'unity',
+  weigth: 'weigth',
+  dimension: 'dimension',
+  notes: 'notes',
+  tags: 'tags',
+  category: 'category',
+  warehouseId: 'warehouseId',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.VentasScalarFieldEnum = {
+  id: 'id',
+  client: 'client',
+  quantity: 'quantity',
+  products: 'products',
+  payment: 'payment',
+  total: 'total',
+  img: 'img',
+  notes: 'notes',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  source: 'source'
+};
+
+exports.Prisma.WarehouseScalarFieldEnum = {
+  id: 'id',
+  warehouse: 'warehouse'
+};
+
+exports.Prisma.TasksScalarFieldEnum = {
+  id: 'id',
+  concept: 'concept',
+  notes: 'notes',
+  amount: 'amount',
+  img: 'img',
+  completed: 'completed',
+  debit: 'debit',
+  initAt: 'initAt',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.HanyuScalarFieldEnum = {
+  id: 'id',
+  hanzi: 'hanzi',
+  pinyin: 'pinyin',
+  xinbanya: 'xinbanya',
+  tone: 'tone',
+  img: 'img',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.BlogScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  content: 'content',
+  author: 'author',
+  img: 'img',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.LogScalarFieldEnum = {
+  id: 'id',
+  ip: 'ip',
+  context: 'context',
+  notes: 'notes',
+  error: 'error',
+  img: 'img',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ListEmailScalarFieldEnum = {
+  id: 'id',
+  fullname: 'fullname',
+  email: 'email',
+  tel: 'tel',
+  message: 'message',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
-
+  Auth: 'Auth',
+  Client: 'Client',
+  Product: 'Product',
+  Ventas: 'Ventas',
+  Warehouse: 'Warehouse',
+  Tasks: 'Tasks',
+  Hanyu: 'Hanyu',
+  Blog: 'Blog',
+  Log: 'Log',
+  ListEmail: 'ListEmail'
 };
 
 /**
