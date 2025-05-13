@@ -16,13 +16,13 @@ export const getProductsFromDatabase = async () => {
   return productsFromDatabase || []
 }
 
-export const addProductToDatabase = async ({ payload }: any) => {
-  payload.id = crypto.randomUUID()
-  payload.code = crypto.randomBytes(6).toString('hex')
-  payload.sku = crypto.randomUUID()
+export const addProductToDatabase = async ({ product }:any) => {
+  product.id = crypto.randomUUID()
+  product.code = crypto.randomBytes(6).toString('hex')
+  product.sku = crypto.randomUUID()
   
     const newProduct = await prisma.product.create({
-        data: payload,
+        data: product,
     })
     if (!newProduct) {
         console.log('Error creating product')

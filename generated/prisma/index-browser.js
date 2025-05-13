@@ -247,6 +247,23 @@ exports.Prisma.ListEmailScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.ProviderScalarFieldEnum = {
+  id: 'id',
+  fullname: 'fullname',
+  address: 'address',
+  city: 'city',
+  email: 'email',
+  tel: 'tel',
+  sector: 'sector',
+  img: 'img',
+  credit: 'credit',
+  historial: 'historial',
+  notes: 'notes',
+  source: 'source',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -268,7 +285,8 @@ exports.Prisma.ModelName = {
   Hanyu: 'Hanyu',
   Blog: 'Blog',
   Log: 'Log',
-  ListEmail: 'ListEmail'
+  ListEmail: 'ListEmail',
+  Provider: 'Provider'
 };
 
 /**

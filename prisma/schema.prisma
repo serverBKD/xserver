@@ -147,5 +147,22 @@ model ListEmail {
   updatedAt DateTime @updatedAt
 }
 
+model Provider {
+  id        String  @id @unique
+  fullname  String
+  address   String?
+  city      String? @default("Valencia")
+  email     String?
+  tel       String
+  sector    String?
+  img       String?
+  credit    String? @default("cash")
+  historial String?
+  notes     String?
+  source    String? @default("form-provider")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
 
 
