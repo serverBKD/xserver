@@ -1,11 +1,11 @@
 import express from "express";
+const router = express.Router();
 import {
   toGetProductsFromMockup,
   toGetProductsFromDatabase,
   toGetProductById,
   toAddProductToDatabase,
 } from "../controllers/products.controller";
-const router = express.Router();
 
 router.get("/", toGetProductsFromDatabase);
 

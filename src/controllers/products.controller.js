@@ -1,19 +1,16 @@
 // import type { Product } from "../types.d.ts";
-import { Request, Response } from "express";
+// import { Request, Response } from "express";
 import productsData from "../services/products.json";
-import prisma from "../models/prisma_client";
+import prisma from "../models/prisma_client.js";
 import crypto from "crypto";
 
 //const products: Product[] = productsData as Product[];
 
-export const toGetProductsFromMockup = (_req: Request, res: Response) => {
+export const toGetProductsFromMockup = (_req, res) => {
   res.json(productsData);
 };
 
-export const toGetProductsFromDatabase = async (
-  _req: Request,
-  res: Response
-) => {
+export const toGetProductsFromDatabase = async (_req, res) => {
   const $ProductsFromDatabase = await prisma.product.findMany();
   if ($ProductsFromDatabase.length === 0) {
     res.send("No products found in the database");
@@ -21,7 +18,7 @@ export const toGetProductsFromDatabase = async (
   res.json($ProductsFromDatabase);
 };
 
-export const toAddProductToDatabase = async (req: Request, res: Response) => {
+export const toAddProductToDatabase = async (req, res) => {
   const {
     fullname,
     description,
@@ -75,7 +72,7 @@ export const toAddProductToDatabase = async (req: Request, res: Response) => {
   res.json($newProduct);
 };
 
-export const toGetProductById = async (req: Request, res: Response) => {
+export const toGetProductById = async (req, res) => {
   const id = req.params.id;
   const $Product = await prisma.product.findFirst({
     where: {
