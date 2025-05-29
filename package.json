@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
+    "build": "pnpm install --freeze-lockfile && prisma generate ",
     "start": "node dist/src/index.js",
     "dev": "node --watch src/index.js",
     "seed": "node src/models/seed.warehouse.prisma.js"
