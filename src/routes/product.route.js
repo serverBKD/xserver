@@ -5,7 +5,7 @@ import {
   toGetProductsFromDatabase,
   toGetProductById,
   toAddProductToDatabase,
-} from "../controllers/products.controller";
+} from "../controllers/products.controller.js";
 
 router.get("/", toGetProductsFromDatabase);
 

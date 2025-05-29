@@ -1,3 +1,6 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -17,6 +20,20 @@ model Auth {
   source    String?  @default("form-login")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Client {
+  id        String   @id @unique
+  fullname  String
+  email     String?  @unique
+  tel       String?
+  city      String?  @default("valencia")
+  img       String?
+  notes     String?
+  source    String?  @default("form-client")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Ventas    Ventas[]
 }
 
 model Product {
@@ -67,59 +84,6 @@ model Warehouse {
   id        Int       @id @unique @default(autoincrement())
   warehouse String    @default("general")
   products  Product[]
-}
-
-model Provider {
-  id        String  @id @unique
-  fullname  String
-  address   String?
-  city      String? @default("Valencia")
-  email     String?
-  tel       String
-  sector    String?
-  img       String?
-  credit    String? @default("cash")
-  historial String?
-  notes     String?
-  source    String? @default("form-provider")
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-}
-
-model Client {
-  id        String   @id @unique
-  fullname  String
-  email     String?  @unique
-  tel       String?
-  city      String?  @default("valencia")
-  img       String?
-  notes     String?
-  source    String?  @default("form-client")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  Ventas    Ventas[]
-}
-
-model Partner {
-  id        String   @id @unique
-  fullname  String
-  description String  
-  address   String
-  sector    String
-  website   String?
-  social    String
-  email     String   @unique
-  tel       String
-  city      String  @default("valencia")
-  country   String?  @default("venezuela")
-  state     String?  @default("carabobo")
-  zip       String?  @default("2001")
-  img       String?
-  since     String
-  notes     String?
-  source    String?  @default("form-partner")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
 
 model Tasks {
@@ -181,3 +145,23 @@ model ListEmail {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Provider {
+  id        String  @id @unique
+  fullname  String
+  address   String?
+  city      String? @default("Valencia")
+  email     String?
+  tel       String
+  sector    String?
+  img       String?
+  credit    String? @default("cash")
+  historial String?
+  notes     String?
+  source    String? @default("form-provider")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+
+
