@@ -24,7 +24,7 @@ export async function toAddTask(req, res) {
   }
 }
 
-export const toGetTasks = async (req, res) => {
+export const getTasks = async (req, res) => {
   const $Tasks = await prisma.tasks.findMany();
   res.json({ $Tasks });
 };

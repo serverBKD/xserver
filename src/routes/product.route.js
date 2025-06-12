@@ -1,17 +1,17 @@
 import express from "express";
 const router = express.Router();
 import {
-  toGetProductsFromMockup,
-  toGetProductsFromDatabase,
-  toGetProductById,
+  getProductsFromMockup,
+  getProductsFromDatabase,
+  getProductById,
   toAddProductToDatabase,
 } from "../controllers/products.controller.js";
 
-router.get("/", toGetProductsFromDatabase);
+router.get("/", getProductsFromDatabase);
 
-router.get("/mockup", toGetProductsFromMockup);
+router.get("/mockup", getProductsFromMockup);
 
-router.get("/:id", toGetProductById);
+router.get("/:id", getProductById);
 
 router.post("/", toAddProductToDatabase);
 

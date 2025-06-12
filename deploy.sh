@@ -9,7 +9,7 @@ git log --pretty=format:"%h, %ar : %s"
 git add .
 
 # Solicita un mensaje de commit al usuario
-fecha_actual=$(LC_TIME=es_ES.UTF-8 date +"%Y%b%d" | awk '{print toupper($0)}')
+fecha_actual=$(LC_TIME=es_ES.UTF-8 date +"%Y%b%d" | awk '{print upper($0)}')
 echo "Introduce la versión del commit:"
 read commit_version
 echo "Introduce el mensaje del commit:"

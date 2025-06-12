@@ -1,22 +1,22 @@
 import { Router } from "express";
 import {
-  toGetPartners,
-  toGetPartnerById,
-  toCreatePartner,
-  toUpdatePartner,
-  toDeletePartner,
+  getPartners,
+  getPartnerById,
+  createPartner,
+  updatePartner,
+  deletePartner,
 } from "../controllers/partner.controller.js";
 
 const router = Router();
 
 // Route to get all partners
-router.get("/", toGetPartners);
+router.get("/", getPartners);
 // Route to create a new partner
-router.post("/", toCreatePartner);
+router.post("/", createPartner);
 // Route to update an existing partner
-router.put("/:id", toUpdatePartner);
+router.put("/:id", updatePartner);
 // Route to delete a partner
-router.delete("/:id", toDeletePartner);
+router.delete("/:id", deletePartner);
 
 export default router;
 

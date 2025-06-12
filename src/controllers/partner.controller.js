@@ -1,11 +1,11 @@
 import prisma from "../models/prisma_client.js";
 
-export const toGetPartners = async (req, res) => {
+export const getPartners = async (req, res) => {
   const partners = await prisma.partner.findMany();
   res.json(partners);
 };
 
-export const toGetPartnerById = async (req, res) => {
+export const getPartnerById = async (req, res) => {
   const { id } = req.params;
   const partner = await prisma.partner.findUnique({
     where: { id: parseInt(id, 10) },
@@ -18,7 +18,7 @@ export const toGetPartnerById = async (req, res) => {
   res.json(partner);
 };
 
-export const toCreatePartner = async (req, res) => {
+export const createPartner = async (req, res) => {
   const {
     fullname,
     description,
@@ -85,7 +85,7 @@ export const toCreatePartner = async (req, res) => {
   }
 };
 
-export const toUpdatePartner = async (req, res) => {
+export const updatePartner = async (req, res) => {
   const { id } = req.params;
   const {
     fullname,
@@ -138,7 +138,7 @@ export const toUpdatePartner = async (req, res) => {
   }
 };
 
-export const toDeletePartner = async (req, res) => {
+export const deletePartner = async (req, res) => {
   const { id } = req.params;
 
   try {

@@ -2,11 +2,11 @@
 import prisma from "../models/prisma_client.js";
 import crypto from "crypto";
 
-export const toGetProductsFromMockup = (req, res) => {
+export const getProductsFromMockup = (req, res) => {
   res.json(productsData);
 };
 
-export const toGetProductsFromDatabase = async (req, res) => {
+export const getProductsFromDatabase = async (req, res) => {
   const $ProductsFromDatabase = await prisma.product.findMany();
   if ($ProductsFromDatabase.length === 0) {
     res.send("No products founded in the database");
@@ -68,7 +68,7 @@ export const toAddProductToDatabase = async (req, res) => {
   res.json($newProduct);
 };
 
-export const toGetProductById = async (req, res) => {
+export const getProductById = async (req, res) => {
   const id = req.params.id;
   const $Product = await prisma.product.findFirst({
     where: {
