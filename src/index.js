@@ -11,18 +11,18 @@ import authRouter from "./routes/auth.route.js";
 import providerRouter from "./routes/provider.route.js";
 import partnerRouter from "./routes/partner.route.js";
 
-app.use("/api/products", productRouter);
-app.use("/api/clients", clientRouter);
-app.use("/api/tasks", taskRouter);
-app.use("/api/hanyu", hanyuRouter);
-app.use("/api/ventas", ventaRouter);
-app.use("/api/blog", blogRouter);
-app.use("/api/listemail", listEmailRouter);
-app.use("/api/logs", logRouter);
-app.use("/api/auth", authRouter);
-app.use("/api/providers", providerRouter);
-app.use("/api/partners", partnerRouter);
+app.use( "/api/products", productRouter );
+app.use( "/api/clients", clientRouter );
+app.use( "/api/tasks", taskRouter );
+app.use( "/api/hanyu", hanyuRouter );
+app.use( "/api/ventas", ventaRouter );
+app.use( "/api/blog", blogRouter );
+app.use( "/api/listemail", listEmailRouter );
+app.use( "/api/logs", logRouter );
+app.use( "/api/auth", authRouter );
+app.use( "/api/providers", providerRouter );
+app.use( "/api/partners", partnerRouter );
 
-app.get("/", (req, res) => {
-  res.send("xserver!");
-});
+app.get( "/", ( req, res ) => {
+  res.status( 200 ).send( "xserver!" );
+} );
